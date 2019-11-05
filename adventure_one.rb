@@ -40,3 +40,6 @@ treasure.set_value(1000)
 p treasure.get_value
 p treasure.get_name
 p treasure.get_description
+p treasure.get_value.class
+p treasure.get_description.class
+p treasure.get_name.class
