@@ -17,7 +17,16 @@ class Treasure < Thing
   end
 end
 
-aThing = Thing.new
+aThing = Thing.new("Sam", "developer")
 aThing.name = "Samuel"
 aThing.description = "A developer"
 
+aTreasure = Treasure.new("$900")
+aTreasure.name = "Gold"
+aTreasure.description = "Mineral crude and expensive iron"
+aTreasure.value = "$1000"
+
+p (aThing.name)
+p (aTreasure.name)
+p (aThing.class)
+p aTreasure.class
