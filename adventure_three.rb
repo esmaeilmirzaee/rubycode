@@ -30,3 +30,7 @@ p (aThing.name)
 p (aTreasure.name)
 p (aThing.class)
 p aTreasure.class
+p "hello World".upcase
+p "hello world".capitalize
+
+

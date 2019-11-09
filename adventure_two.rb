@@ -70,3 +70,9 @@ class Vault
     @combination_lock
   end
 end
+
+class Something
+  def hello(word)
+    word.upcase
+  end
+end
