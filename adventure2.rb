@@ -62,3 +62,11 @@ room2= Room.new("Dark Cave", "A gloomy hole in the rocks")
 room3= Room.new("Forest Glade", "A verdant clearing filled with shimmering light")
 
 my_map = Map.new([room1, room2, room3])
+
+puts "\nLet's inspect the treasures..."
+puts "This is the treasure1: #{t1.inspect}"
+puts "This is the treasure2: #{t2.inspcet}"
+puts "\nLet's try out the Thing.to_s method..."
+puts "Yup, treasure 2 is #{t2.to_s}"
+puts "\nNow let's see how our attribute accessors work"
+puts "We'll evaluate this:"
