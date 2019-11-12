@@ -53,3 +53,12 @@ class Map
     }
   end
 end
+
+t1= Treasure.new("Sword", "an Elvish weapon forged of gold", 800)
+t2= Treasure.new("Dragon Horde", "a huge pile of jewels", 550)
+
+room1= Room.new("Crystal Grotto", "A glittery cavern")
+room2= Room.new("Dark Cave", "A gloomy hole in the rocks")
+room3= Room.new("Forest Glade", "A verdant clearing filled with shimmering light")
+
+my_map = Map.new([room1, room2, room3])
