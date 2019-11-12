@@ -40,7 +40,16 @@ end
 
 class Map
   def initialize(room)
-    @room = room
+    @rooms = room
   end
-  
+
+  # The to_s method iterates over all the Room objects in @rooms
+  # and prints information on each. We'aa come back to look at the
+  # implementation of this method later on
+  def to_s
+    @rooms.each {
+      |a_room|
+      puts a_room
+    }
+  end
 end
