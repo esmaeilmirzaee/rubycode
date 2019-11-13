@@ -70,3 +70,15 @@ puts "\nLet's try out the Thing.to_s method..."
 puts "Yup, treasure 2 is #{t2.to_s}"
 puts "\nNow let's see how our attribute accessors work"
 puts "We'll evaluate this:"
+puts 't1 name=#{t1.name}, description=#{t1.description}, value=#{t1.value}'
+puts "t1 name=#{t1.name}, description=#{t1.description}, value=#{t1.value}"
+puts "\nNow we'll assign 100 to t1.value and alter t1.description..."
+t1.value = 100
+#NOTE: << appends specified string to existing string
+t1.description << "(now somewhat tarnished)"
+puts "t1 (NOW) name=#{t1.name}, description=#{t1.description}, value=#{t1.value}"
+puts "\nLet's take a look at room1..."
+puts "room1 name=#{room1.name}, description=#{room1.description}"
+puts "\nAnd the map..."
+puts "my_map = #{my_map.to_s}"
+
