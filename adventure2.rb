@@ -41,6 +41,7 @@ end
 class Map
   def initialize(room)
     @rooms = room
+    @@num_room += 1
   end
 
   # The to_s method iterates over all the Room objects in @rooms
@@ -52,6 +53,9 @@ class Map
       puts a_room
     }
   end
+
+  def class_vars
+    "Number of rooms is #{@@num_rooms}"
 end
 
 t1= Treasure.new("Sword", "an Elvish weapon forged of gold", 800)
@@ -81,4 +85,5 @@ puts "\nLet's take a look at room1..."
 puts "room1 name=#{room1.name}, description=#{room1.description}"
 puts "\nAnd the map..."
 puts "my_map = #{my_map.to_s}"
-
+puts "\nFinally, let's check how many Things objects we've created..."
+puts t1.show_classvars
