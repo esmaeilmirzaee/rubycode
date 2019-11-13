@@ -39,9 +39,10 @@ class Treasure < Thing
 end
 
 class Map
-  def initialize(room)
-    @rooms = room
-    @@num_room += 1
+  @@num_rooms = 0
+  def initialize(rooms)
+    @rooms = rooms
+    @@num_rooms += 1
   end
 
   # The to_s method iterates over all the Room objects in @rooms
@@ -54,8 +55,9 @@ class Map
     }
   end
 
-  def class_vars
+  def show_classvars
     "Number of rooms is #{@@num_rooms}"
+  end
 end
 
 t1= Treasure.new("Sword", "an Elvish weapon forged of gold", 800)
@@ -69,7 +71,7 @@ my_map = Map.new([room1, room2, room3])
 
 puts "\nLet's inspect the treasures..."
 puts "This is the treasure1: #{t1.inspect}"
-puts "This is the treasure2: #{t2.inspcet}"
+puts "This is the treasure2: #{t2.inspect}"
 puts "\nLet's try out the Thing.to_s method..."
 puts "Yup, treasure 2 is #{t2.to_s}"
 puts "\nNow let's see how our attribute accessors work"
