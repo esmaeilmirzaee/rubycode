@@ -33,5 +33,18 @@ p array_words.compact!
 p array_words.uniq
 array_numbers = Array.new(5) { |index| index * 1 }
 p array_numbers
-
-
+p array_numbers.each { |a| print a -= 10, " " }
+str = ""
+p array_words.reverse_each{ |word| str += "#{word} " }
+p str
+p array_words
+p array_numbers { |a| 2*a }
+p array_numbers
+p array_numbers.select { |a| a>3 }
+p array_numbers.select! { |a| a>3 }
+p array_numbers.reject { |a| a>3 }
+p array_numbers.reject! { |a| a>3 }
+p array_numbers.drop_while { |a| a<4 }
+p array_numbers
+p array_numbers.delete_if { |a| a<4 }
+p array_numbers.keep_if { |a| a<4 }
