@@ -38,7 +38,6 @@ str = ""
 p array_words.reverse_each{ |word| str += "#{word} " }
 p str
 p array_words
-p array_numbers { |a| 2*a }
 p array_numbers
 p array_numbers.select { |a| a>3 }
 p array_numbers.select! { |a| a>3 }
