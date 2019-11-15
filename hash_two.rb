@@ -13,6 +13,7 @@ print "hash_one's values: "
 p hash_one.values
 print "hash_two's values: "
 p hash_two.values
+
 puts
 p hash_one.keys & hash_two.keys
 p hash_one.values & hash_two.values
