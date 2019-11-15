@@ -1,10 +1,13 @@
 def dayIs(day)
-  if day == 'Saturday' or day == 'Sunday'
+  working_overtime = true
+  if day == 'Saturday' or day == 'Sunday' and not working_overtime
     daytype = 'weekend'
+    daytype += ', holiday'
   else
     daytype = 'weekday'
+    daytype += ', working day'
   end
-  return daytype
+  daytype
 end
 
 day_one = 'Monday'
