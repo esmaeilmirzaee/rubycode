@@ -1,4 +1,5 @@
-# Rubycode
+# Rubycode®
+### Warning: PLEASE DO NOT FORK OR CLONE THIS PROJECT - THE CONTENT OF THIS REPO IS COPYRIGHT ISSUE PROTECTED.
 
 The purpose of the current git repository is to record my applications which I encounter in different books. As I am working relentlesly to improve my knowledge about `Ruby` language and `Rails` framework.
 
