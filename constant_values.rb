@@ -16,8 +16,8 @@ puts $y
 method
 puts x
 puts $y
-puts MATH::PI
+puts Math::PI
 MYCONST = 500
 puts MYCONST
-MATH::PI = "A new value"
-puts MATH::PI
+Math::PI = "A new value"
+puts Math::PI
