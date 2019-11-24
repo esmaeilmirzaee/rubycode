@@ -1,0 +1,7 @@
+arr = Array.new
+p arr
+arr[0] = 657
+p arr
+arr [10] = 756
+p arr
+p arr[10]
