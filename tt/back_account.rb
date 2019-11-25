@@ -15,3 +15,9 @@ class BankAccount
     puts "Your balance is $#{@balance}."
   end
 end
+
+bank_account = BankAccount.new("Esmaeil MIRZAEE")
+bank_account.class
+
+bank_account.deposit
+bank_account.show_balance
