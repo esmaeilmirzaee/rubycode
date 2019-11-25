@@ -13,4 +13,4 @@ END
   end
 end
 
-Poem.new
+Poem.new.recite
