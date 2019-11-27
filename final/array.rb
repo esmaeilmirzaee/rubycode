@@ -31,3 +31,4 @@ puts arr.select { |item| item < 2 }
 puts arr.reject { |item| item > 2 }
 puts arr.map { |item| item * 1.3 }
 puts arr.collect { |item| item * -1 }
+puts arr.empty?
