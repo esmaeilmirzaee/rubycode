@@ -14,3 +14,8 @@ class SimpleBenchmark
     puts "Result:\t\t#{end_time - start_time} seconds."
   end
 end
+ 
+SimpleBenchmark.go 5 do
+  time = rand(0.1..1.0)
+  sleep time
+end
