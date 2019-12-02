@@ -50,3 +50,17 @@ p "hello World".capitalize.class
 
 p 'hello'.upcase
 p 'HELLO'.downcase
+
+p "EsMaEiL".swapcase
+p "Test".reverse
+
+p 'test'[0].upcase
+p 'test'[-1].upcase.class
+
+p word = %w(word)
+p word.class
+
+word = 'word'
+p word
+word.capitalize!
+p word
