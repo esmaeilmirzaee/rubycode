@@ -83,3 +83,11 @@ end
 p meal_plan('weekday', 'lunch')
 p meal_plan('weekday', 'dinner')
 p meal_plan('weekend', 'breakfast')
+
+number = 1000
+if number.respond_to?("length")
+  p number.length
+elsif number.respond_to?("next")
+  p number.next
+end
+puts 1.respond_to?(:next)
