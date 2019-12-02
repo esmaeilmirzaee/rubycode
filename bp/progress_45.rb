@@ -23,7 +23,30 @@ p another_story
 p story
 p story.object_id
 
-p story(-5, 7)
+story = "Once upon a time in land far, far away..."
+p story[-5, 7]
 p story[-1]
 
 p story[23..34]
+p story [0...23]
+
+p story.slice(0...23)
+p story.slice(23..34)
+
+thing = "rocket ship"
+p thing
+
+thing[-2] = 'o'
+p thing
+
+thing[-1] = 'ot'
+p thing
+
+thing[-5..-4] = 'f'
+p thing
+
+p "Hello World".capitalize
+p "hello World".capitalize.class
+
+p 'hello'.upcase
+p 'HELLO'.downcase
