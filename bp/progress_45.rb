@@ -64,3 +64,8 @@ word = 'word'
 p word
 word.capitalize!
 p word
+
+name = "Snow White"
+p name.downcase.include?("h")
+
+p name.nil?
