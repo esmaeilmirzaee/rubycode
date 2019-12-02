@@ -15,3 +15,8 @@ p a.size
 p b.size
 p c.size
 p d.size
+
+p a.length.odd?
+p a.length.odd?.class
+p a.class
+p a.length.class
