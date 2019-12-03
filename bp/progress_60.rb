@@ -110,3 +110,27 @@ make_phone_call(1234567, 5, 999)
 # TODO: default value in method definition is integer but invoking method
 # provides string ones
 make_phone_call(1234567, "3", '123')
+
+state = true
+
+while state
+  print 'please enter username: '
+  username = gets.chomp.downcase
+  print 'please enter password: '
+  password = gets.chomp.downcase
+
+  if username == 'esmaeil' && password == 'ahardpassword'
+    puts 'entry granted. The nuclear codes are... '
+    state = false
+  elsif username == 'quit' || password == 'quit'
+    puts 'Goodbye! Better luck next time!'
+    state false
+  else
+    puts "incorrect combination, try again or enter  'quit'"
+  end
+end
+
+unless state
+  puts state
+  state = false
+  end
