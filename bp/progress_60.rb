@@ -91,3 +91,22 @@ elsif number.respond_to?("next")
   p number.next
 end
 puts 1.respond_to?(:next)
+
+def check_pokemon(pokemon)
+  pokemon.capitalize == 'Charizard' ? 'Fireball!' : "That's not Charizard!"
+end
+
+p check_pokemon 'pkachu'
+p check_pokemon 'squirtle'
+p check_pokemon 'onyx'
+p check_pokemon 'charizard'
+
+def make_phone_call(number, international_code = 1, area_code = 644)
+  puts "Calling #{international_code}-#{area_code}-#{number}"
+end
+
+make_phone_call(1234567)
+make_phone_call(1234567, 5, 999)
+# TODO: default value in method definition is integer but invoking method
+# provides string ones
+make_phone_call(1234567, "3", '123')
