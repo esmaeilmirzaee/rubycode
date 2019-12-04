@@ -124,7 +124,7 @@ while state
     state = false
   elsif username == 'quit' || password == 'quit'
     puts 'Goodbye! Better luck next time!'
-    state false
+    state = false
   else
     puts "incorrect combination, try again or enter  'quit'"
   end
@@ -134,3 +134,21 @@ unless state
   puts state
   state = false
   end
+
+nums = 90...150
+p nums.first(4)
+p nums.last(2)
+
+nums = 90..150
+p nums.first(9)
+p nums.last(2)
+p nums.last
+
+alphabet = 'a'..'z'
+p alphabet.first
+p alphabet.last
+p alphabet.first(2)
+p alphabet.last(5)
+
+alphabet = 'A'..'z'
+p alphabet.first(40)
