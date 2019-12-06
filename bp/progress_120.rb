@@ -14,3 +14,20 @@ def celsius_fahrenheit(fahrenheit)
 end
 
 p celsius_fahrenheit(fahrenheit_temp)
+
+p [1, 2, 3].map { |n| puts n**2}
+
+numbers = [3, 8, 11, 15, 89]
+def cubes(array)
+  array.map { |n| n**3 }
+end
+
+p cubes(numbers)
+
+animals = ['Lion', 'Zebra', 'Baboon', 'Cheetah', 'Elephant']
+
+i = 0
+while i < animals.length
+  puts "#{i}: #{animals[i]}"
+  i += 1
+end
