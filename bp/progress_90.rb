@@ -104,3 +104,38 @@ p fruits.last
 
 p fruits.first(1)
 p fruits.last(1)
+
+locations = ['House', 'Airport', 'Bar']
+p locations
+
+locations.insert(1, 'Restaurant', 'Saloon', 'Cafe')
+p locations
+
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+p arr
+arr.pop
+p arr.pop
+p arr.length
+
+p arr.shift
+arr.unshift(25)
+p arr
+arr.unshift(500, 1, -1, 'sam')
+p arr
+
+# equality and inequality
+a = [1, 2, 3]
+b = [1, 2, 3, 4]
+c = [3, 2, 1]
+d = [1, 2, 3]
+e = a.reverse
+
+p "a == a: #{a == a}"
+p "a == b: #{a == b}"
+p "a == c: #{a == c}"
+p "a == d: #{a == d}"
+p "a == e: #{a == e}"
+
+a = ['Skittles', 'Starbursts', 'Snikers']
+b = ['Skittles', 'Starbursts', 'snikers']
+p "a == a: #{a == a}"
