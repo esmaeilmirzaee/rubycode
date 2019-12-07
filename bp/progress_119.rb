@@ -130,3 +130,23 @@ end
 p custom_join(names)
 p custom_join(names, "'")
 p custom_join(names, '-')
+p custom_join(names, '!==!')
+
+p 'Hello World!'.count('!')
+p 'Hello World!'.count('l')
+p 'Hello World!'.count('LW')
+p 'Hello World!'.count('lw')
+p 'Hello World!'.count('wl')
+p 'Hello World!'.count('WL')
+p 'Hello World!'.count('?')
+
+def custom_count(string, characters)
+  c = 0
+  string.chars.each do |char|
+    c += 1 unless char != characters
+  end
+  c
+end
+puts
+puts
+p custom_count('Hello World!', 'ls')
