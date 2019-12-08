@@ -50,3 +50,18 @@ word = "goodbye"
 p word
 word.clear
 p word
+
+puts "*" * 10
+puts "Hello World".delete('h')
+puts 'hello world'.delete('H')
+
+def custom_delete(string, delete_characters)
+  new_string = ""
+  string.each_char do |char|
+    new_string << char unless delete_characters.include?(char)
+  end
+  new_string
+end
+
+
+p custom_delete("Hello World", 'h')
