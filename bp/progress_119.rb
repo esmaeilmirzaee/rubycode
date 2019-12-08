@@ -150,3 +150,14 @@ end
 puts
 puts
 p custom_count('Hello World!', 'ls')
+
+def another_custom_count(string, search_characters)
+  count = 0
+  string.each_char do |char|
+    count += 1 if search_characters.include?(char)
+  end
+  count
+end
+
+puts "An amazing aardvak appeared".count('Aa')
+puts another_custom_count("An amazing aardvak appeared", "Aa")
