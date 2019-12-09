@@ -98,9 +98,44 @@ end
 p custom_compact(sports)
 
 puts "=" * 10
-[10, 20, 30, 40].reduce(0) do |k, v|
-  puts k
-  puts v
+[10, 20, 30, 40].reduce do |previous, current|
+  puts "The previous is #{previous}"
+  puts "The current is #{current}"
+  # previous + current
 end
 
 # p [10, 20, 30, 40].reduce
+
+result = [3, 4, 5, 6, 7].reduce(1) do |previous, current|
+  puts "the previous value is #{previous}"
+  puts "The current value is #{current}"
+  previous * current
+end
+
+p result
+
+registrations = [
+  ['bob', 'dan', 'jack'],
+  ['rick', 'susan', 'molly'],
+  ['peirce', 'sean', 'george']
+]
+
+p registrations.flatten
+
+puts "=" * 10
+names = %w(Bo Moe Joe)
+registrations = [true, false, false]
+p names.zip(registrations)
+
+p [1, 2, 3].zip([4, 6, {5 => "five"}, 6], ["A", true])
+puts "=" * 10
+
+def custom_zip(arr1, arr2)
+  final = Array.new
+  arr1.each_with_index do |value, index|
+    final << [value, arr2[index]]
+  end
+  final
+end
+
+p custom_zip(names, registrations)
