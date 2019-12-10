@@ -87,5 +87,58 @@ capitals.each do |pair|
   p pair[0]
 end
 p "=" * 20
+
+salaries = {director: 100_000,
+            producer: 200_000,
+            ceo: 3_000_000}
+
+salaries.each_key do |position|
+  puts "EMPLOYEE RECORD..."
+  puts "#{position}"
+end
+
+salaries.each_value { |salary| puts "The next value is #{salary}."}
+
+def get_keys_from_hash(hash)
+  keys = []
+  hash.each do |key, value|
+    keys << key.upcase
+  end
+  keys
+end
+
+p get_keys_from_hash(salaries)
+p "=" * 20
+
+shopping_list = {banana: 5, oranges: 10,
+                 carrots: 3, crackers: 5}
+p shopping_list.keys
+p shopping_list.values
+p "=" * 20
+
+fruit_prices = {banana: 1.05}
+p fruit_prices[:carrots]
+
+fruit_prices = Hash.new("Unknown")
+p fruit_prices
+fruit_prices[:banana] = 1.05
+fruit_prices[:orange] = 0.69
+fruit_prices[:kiwi] = 10.99
+
+p fruit_prices[:steak]
+p fruit_prices[:celery]
+p fruit_prices[:mushrooms]
+
+puts
+
+fruit_prices.default = "Whoops! That does not exist."
+p fruit_prices[:steak]
+p fruit_prices[:banana]
+
+puts
+
+fruit_prices.default = -1
+p fruit_prices[:steak]
+p fruit_prices[:banana]
 p "=" * 20
 p "=" * 20
