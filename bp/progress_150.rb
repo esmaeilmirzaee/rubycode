@@ -141,4 +141,52 @@ fruit_prices.default = -1
 p fruit_prices[:steak]
 p fruit_prices[:banana]
 p "=" * 20
+
+spice_girls = {scary: "Melanie Brown",
+               sporty: "Melanie Chisholm",
+               baby: "Emma Bunton",
+               ginger: "Geri  Halliwell",
+               posh: "Victoria Beckham"}
+
+p spice_girls.to_a
+p spice_girls.to_a.flatten
+
+power_rangers = [
+  [:red, "Jason"],
+  [:black, "Zack"],
+  [:blue, "Billy"],
+  [:yellow, "Trini"],
+  [:pink, "Kimberly"]
+]
+puts power_rangers.to_h
+p "=" * 20
+
+pokemon = {squirtle: "Water",
+           bulbasaur: "Grass",
+           charizard: "Fire"}
+p pokemon.sort
+p pokemon.sort.reverse
+p pokemon.sort_by { |pokemon, type| pokemon }
+p pokemon.sort_by { |pokemon, type| pokemon }.reverse
+
+p pokemon.sort_by { |pokemon, type| type }
+p pokemon.sort_by { |pokemon, type| type }.reverse
+p "=" * 20
+
+cars = {toyota: "camry",
+        chevrolet: "aveo",
+        ford: "F-150",
+        kia: "soul"}
+puts cars.key?(:chevrolet)
+puts cars.key?("chevrolet")
+puts cars.key?(25)
+puts cars.has_key?(:chevrolet)
+puts
+puts cars.value?("aveo")
+puts cars.value?(:aveo)
+puts cars.value?(25)
+puts cars.has_value?("aveo")
+p "=" * 20
+
+
 p "=" * 20
