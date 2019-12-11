@@ -227,5 +227,28 @@ recipe = {sugar: 5,
           pepper: 4}
 high = recipe.select { |ingredient, teaspoon| teaspoon >= 5 }
 puts high
+
+low = recipe.reject { |ingredient, teaspoon| teaspoon >= 5 }
+puts low
+
+includes_s = recipe.select { |ingredient, teaspoon|
+  ingredient.to_s.include?('s') }
+puts includes_s
+p "=" * 20
+
+market = {garlic: "3 cloves",
+          tomatoes: "5 batches",
+          milk: "10 gallons"}
+kitchen = {bread: "2 loaves",
+           yogurt: "20 cans",
+           milk: "100 gallons"}
+p market.merge(kitchen)
+p kitchen.merge(market)
+def custom_merge(hash1, hash2)
+
+end
+p "=" * 20
+
+
 p "=" * 20
 p "=" * 20
