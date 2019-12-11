@@ -244,9 +244,24 @@ kitchen = {bread: "2 loaves",
            milk: "100 gallons"}
 p market.merge(kitchen)
 p kitchen.merge(market)
-def custom_merge(hash1, hash2)
-
+def custom_merge(hash_one, hash_two)
+  new_hash = hash_one.dup
+  hash_two.each { |elem, value| new_hash[elem] = value unless hash_one.include?(elem) }
+  new_hash
 end
+
+p custom_merge(kitchen, market)
+p custom_merge(market, kitchen)
+def a_merge(hash_one)
+  hash_one.each { |elem, value| puts "elem: #{elem}" }
+end
+
+def b_merge(hash_one)
+  hash_one.each { |elem| puts "Element: #{elem}"}
+end
+
+b_merge(market)
+# p custom_merge(kitchen, market)
 p "=" * 20
 
 
