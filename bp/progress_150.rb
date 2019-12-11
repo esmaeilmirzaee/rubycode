@@ -188,6 +188,44 @@ puts cars.value?(25)
 puts cars.has_value?("aveo")
 p "=" * 20
 
+def calculate_total_one(price, tip, tax)
+  tax_amount = price * tax
+  tip_amount = price * tip
+  price + tip_amount + tax_amount
+end
 
+puts calculate_total_one(24.99, 0.18, 0.07)
+puts calculate_total_one(0.18, 0.07, 24.99)
+
+def calculate_total_two(info)
+  tax_amount = info[:price] * info[:tax]
+  tip_amount = info[:price] * info[:tip]
+  info[:price] + tax_amount + tip_amount
+end
+
+bill = {price: 24.99, tip: 0.18, tax: 0.07}
+p calculate_total_two(bill)
+bill = {tax: 0.07, price: 24.99, tip: 0.18}
+p calculate_total_two(bill)
+p calculate_total_two({tax: 0.07, price: 24.99, tip: 0.18})
+p calculate_total_two(tax: 0.07, price: 24.99, tip: 0.18)
+p calculate_total_two tax: 0.07, price: 24.99, tip: 0.18
+p "=" * 20
+
+superheroes = {spiderman: "Peter Parker",
+               superman: "Clark Keson",
+               batman: "Bruce Wayne"}
+p superheroes
+removed = superheroes.delete(:spiderman)
+p superheroes
+p removed
+p "=" * 20
+
+recipe = {sugar: 5,
+          flour: 10,
+          salt: 2,
+          pepper: 4}
+high = recipe.select { |ingredient, teaspoon| teaspoon >= 5 }
+puts high
 p "=" * 20
 p "=" * 20
