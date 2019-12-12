@@ -26,3 +26,6 @@ def char_count(string)
 end
 
 p char_count(another_sentence)
+a_hash = word_count(sentence)
+removed = a_hash.delete(:once)
+puts a_hash
