@@ -54,3 +54,61 @@ a_cubes, b_cubes, c_cubes = [a, b, c].map { |array| array.map(&cubes) }
 p a_cubes
 p b_cubes
 p c_cubes
+
+currencies = [10, 20, 30, 40, 50]
+to_euros = Proc.new { |currency| currency * 0.95 }
+to_rupees = Proc.new { |currency| currency * 68.13 }
+to_pesos = Proc.new { |currency| currency * 20.70 }
+p to_euros
+p to_pesos
+p to_rupees
+
+ages = [10, 60, 83, 30, 43, 25]
+is_old = Proc.new do |age|
+  age > 55
+end
+
+p ages.select(&is_old)
+
+def pass_control_on_condition
+  puts "Inside the method."
+  if block_given?
+    yield
+  end
+  puts "Back inside the method."
+end
+
+pass_control_on_condition
+
+def pass_control_on_condition_two
+  puts "Inside the method."
+  yield if block_given?
+  puts "Back inside the method."
+end
+
+pass_control_on_condition_two
+
+def speak_the_truth
+  yield "Boris" if block_given?
+end
+
+speak_the_truth { |name| puts "#{name} is brilliant." }
+speak_the_truth { |name| puts "#{name} is hard-working!"}
+
+def speak_the_truth_two(name)
+  yield name if block_given?
+end
+
+speak_the_truth_two("Boris") { |name| puts "#{name} is brilliant!"}
+speak_the_truth_two("Boris") { |name| puts "#{name} is incredible!"}
+
+
+def speak_the_truth_three(name)
+  yield name if block_given?
+end
+
+speak_the_truth_three("Boris") do |name, age|
+  p name
+  p age
+  puts "#{name} is #{age} years old."
+end
