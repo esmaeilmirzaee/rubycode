@@ -168,3 +168,54 @@ p [1, 2, 3, 4, 5].select(&:even?)
 
 p [111, 2, 3, 4, 5].reject { |number| number.odd? }
 p [111, 2, 3, 4, 5].reject(&:odd?)
+
+def talk_about(name, &prc)
+  puts "Let me tell about #{name}"
+  prc.call(name)
+end
+good_things = Proc.new do |name|
+  puts "#{name} is a genius."
+  puts "#{name} is a jolly good fellow!"
+end
+bad_things = Proc.new do |name|
+  puts "#{name} is a dolt."
+  puts "I can't stand #{name}."
+end
+talk_about("Esmaeil", &good_things)
+talk_about("Esmaeil", &bad_things)
+
+squares_lambda = lambda { |number| number ** 2 }
+square_proc = Proc.new { |number| number ** 2 }
+
+p [1, 2, 3].map(&square_proc)
+p square_proc.call(5)
+
+p [1, 2, 3].map(&squares_lambda)
+p squares_lambda.call(5)
+
+some_proc = Proc.new { |name, age| "#{name} is #{age} years old."}
+p some_proc.call("Boris", 25)
+p some_proc.call("Boris")
+p some_proc.call()
+some_lambda = lambda { |name, age| "#{name} is #{age} years old."}
+p some_lambda.call("Boris", 25)
+# p some_lambda.call() # => wrong number of arguments (given 0, expected 2) (ArgumentError)
+
+def diet
+  status = lambda { return "You gave in" }
+  status.call
+  "You completed the diet!"
+end
+
+p diet
+result = diet
+p result
+
+def diet_p
+  status = Proc.new { return "You gave in" }
+  status.call
+  "You completed the diet!"
+end
+p diet_p
+result = diet_p
+p result
