@@ -107,5 +107,8 @@ File.open("another_file.txt", "a") do |file|
   file.write "Also one more line with file.write."
 end
 
-# File.rename("another_file.txt", "another.txt")
-# File.delete("another_file.txt")
+File.rename("another_file.txt", "another.txt")
+File.copy("another.txt", "another_file.txt")
+File.delete("another_file.txt")
+
+File.delete("another.txt") if File.exist?("another.txt")
