@@ -68,4 +68,24 @@ winter = Time.new(2019, 12, 21)
 puts birthday == Time.now
 
 puts independence_day.between?(summer, winter)
+
+puts
+
 puts winter.to_s
+puts winter.ctime
+p Time.new.to_a
+
+today = Time.now
+p today.strftime("%B, %b")
+p today.strftime("%B, %b")
+
+puts
+
+require 'time'
+puts Time.parse("2016-01-01") # removing require 'time' generates error
+puts Time.parse("03-04-2000")
+# puts Time.strptime("03-04-2000")
+puts Time.strptime("03-04-2000", "%m-%d-%Y")
+puts Time.strptime("03-04-2000", "%d-%m-%Y")
+
+puts
