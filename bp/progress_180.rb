@@ -108,7 +108,7 @@ File.open("another_file.txt", "a") do |file|
 end
 
 File.rename("another_file.txt", "another.txt")
-File.copy("another.txt", "another_file.txt")
+# File.copy("another.txt", "another_file.txt")
 File.delete("another_file.txt")
 
 File.delete("another.txt") if File.exist?("another.txt")
