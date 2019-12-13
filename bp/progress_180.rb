@@ -89,3 +89,23 @@ puts Time.strptime("03-04-2000", "%m-%d-%Y")
 puts Time.strptime("03-04-2000", "%d-%m-%Y")
 
 puts
+
+File.open("novel.txt").each do |line|
+  puts line.strip.capitalize
+end
+
+File.open("another_file.txt", "w") do |file|
+  file.puts "I'm creating this from Ruby!"
+  file.write "No line break here!"
+  file.puts "Pretty cool"
+end
+
+File.open("another_file.txt", "w") { |file| file.puts "Blah Blah Blah" }
+File.open("another_file.txt", "a") do |file|
+  file.puts 'This will be appended to the end.'
+  file.print "And one more line with file.print."
+  file.write "Also one more line with file.write."
+end
+
+# File.rename("another_file.txt", "another.txt")
+# File.delete("another_file.txt")
