@@ -158,3 +158,13 @@ greeter(&phrase)
 hi = Proc.new { puts "Hi there"}
 5.times(&hi)
 5.times { hi.call }
+
+p ["1", "2", "3"].map { |number| number.to_i }
+p ["1", "2", "3"].map(&:to_i)
+p [10, 20, 30].map(&:to_s)
+
+p [1, 2, 3, 4, 5].select {|number| number.even? }
+p [1, 2, 3, 4, 5].select(&:even?)
+
+p [111, 2, 3, 4, 5].reject { |number| number.odd? }
+p [111, 2, 3, 4, 5].reject(&:odd?)
