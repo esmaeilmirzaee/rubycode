@@ -1,3 +1,4 @@
+# frozen_string_literal: false
 ARGV.each do |argument|
   number = argument.to_i
   puts "The square of #{number} is #{number ** 2}"
@@ -108,3 +109,20 @@ p poem.scan(/\A\d+/) # start of the string
 p poem.scan(/\A\d/)  # start of the string only one digit
 p poem.scan(/\a\d/)  # TODO not working; just a discovery of curiosity
 p poem.scan(/eer.\z/) # end of the string
+
+puts
+
+sales = "I bought 9 apples, 25 bananas, and 4 oranges at the store."
+p sales.scan(/[^aeiouAEIOU,\s\d\.]/) # ^exclude-characters
+
+word = "aspiring"
+p word.sub("ing", "in") # {looking}, {replace}
+puts "(555)-555 1234".gsub(" ", "").gsub("(", "").gsub(")","")
+puts "(555)-555 1234".gsub(/[-\s\(\)]/, "")
+puts "555))()-555 1234".gsub(/[-\s\(\)]/, "")
+
+a_sentence = "The first phone number I called was 555-123-4567. \nAfterwards, I
+called 967-654-3210."
+p a_sentence.scan(/\d{3}/) # just 3 digits
+p a_sentence.scan(/\d{3}-\d{3}/)
+p a_sentence.scan(/\d{3}-\d{3}-\d{4}/)
