@@ -85,3 +85,26 @@ p voicemail.scan(/\d+/)
 p voicemail.scan(/\D/).count
 p voicemail.scan(/\s/).length
 p voicemail.scan(/\S/).length
+
+puts
+
+paragraph = "This is my essay. I deserve an A. I rank it a 5 out of 5."
+puts paragraph.scan(/./) # any character at all.
+puts paragraph.scan(/\./) # dots
+
+puts paragraph.scan(/d/) # d's
+puts paragraph.scan(/\d/) # any digit
+puts paragraph.scan(/\D/) # any non-digit
+puts paragraph.scan(/\s/) # any white space
+puts paragraph.scan(/ /)  # any white space
+puts paragraph.scan(/\s+/)# any white space (tabs, 2,3,4,... space)
+puts paragraph.scan(/\S/) # any non-space
+
+puts
+
+poem = "99 bottles of beer of the wall, 99 bottles of beer."
+p poem.scan(/\d+/)
+p poem.scan(/\A\d+/) # start of the string
+p poem.scan(/\A\d/)  # start of the string only one digit
+p poem.scan(/\a\d/)  # TODO not working; just a discovery of curiosity
+p poem.scan(/eer.\z/) # end of the string
