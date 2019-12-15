@@ -49,8 +49,10 @@ class Gadget
   end
 
   def info
-    "Gadget #{@production_number} has the username #{@username}."
+    "Gadget #{@production_number} has the username #{@username}. It is made from
+     the #{self.class} class and it has the ID #{self.object_id}."
   end
+  alias to_s info
 end
 
 phone = Gadget.new
@@ -61,6 +63,6 @@ p phone.instance_variables
 laptop = Gadget.new
 p laptop.instance_variables
 
-puts phone.info
-
+puts phone.to_s
+puts Gadget.new
 puts laptop.info
