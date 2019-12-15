@@ -47,8 +47,9 @@ class Gadget
     @password = "topsecret"
     @production_number = "#{("a".."z").to_a.sample}-#{rand(1..999)}"
   end
+
   def info
-    "#{@production_number} has the username #{@username}"
+    "Gadget #{@production_number} has the username #{@username}."
   end
 end
 
@@ -61,3 +62,5 @@ laptop = Gadget.new
 p laptop.instance_variables
 
 puts phone.info
+
+puts laptop.info
