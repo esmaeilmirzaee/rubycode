@@ -47,9 +47,11 @@ class Gadget
   attr_reader :production_number
   attr_writer :password
 
-  def initialize
-    @username = "User #{rand(1..100)}"
-    @password = "topsecret"
+  def initialize(username, password)
+    @username = username
+    @password = password
+    # @username = "User #{rand(1..100)}"
+    # @password = "topsecret"
     @production_number = "#{("a".."z").to_a.sample}-#{rand(1..999)}"
   end
 
@@ -77,14 +79,17 @@ class Gadget
 
 end
 
-phone = Gadget.new
+g_one = phone = Gadget.new("misterprogrammer", "bestpassword")
 p phone.inspect
 p phone.instance_variables
 
 
-laptop = Gadget.new
+g_two = laptop = Gadget.new("missprogrammer", "powerfulpassword")
 p laptop.instance_variables
 
 puts phone.to_s
-puts Gadget.new
+puts Gadget.new("misprogrammer", "password")
 puts laptop.info
+
+p g_one
+p g_two
