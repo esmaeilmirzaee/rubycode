@@ -2,9 +2,9 @@
 require 'Time'
 
 class Gadget
-  attr_writer :password
+  # attr_writer :password
   attr_reader :production_number
-  attr_accessor :username
+  attr_accessor :username, :password
 
   def initialize(username, password)
     @username = username
@@ -17,6 +17,11 @@ class Gadget
     "Gadget #{@production_number} has the username #{@username}. It is made from
     the #{self.class} class and it has the ID #{self.object_id}."
   end
+
+  def password=(password)
+    @password = password if validate_password(password)
+  end
+
   private
   def generate_production_number
     start_digits = rand(10_000..99_999)
@@ -29,7 +34,18 @@ class Gadget
     5.times { middle_digits << alphabet.sample }
     "#{start_digits}-#{middle_digits}-#{end_digits}"
   end
+
+  def validate_password(password)
+    password.is_a?(String) && password.length > 8 &&  password =~ /\d/
+  end
 end
 
 gadget = Gadget.new('Esmaeil', 'MIRZAEE')
 p gadget.production_number
+
+phone = Gadget.new("Esmaeil", "programming")
+puts phone.password
+phone.password=("123456978")
+p phone.password
+phone.password = "passsss123"
+p phone.password
