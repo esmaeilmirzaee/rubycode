@@ -3,7 +3,7 @@ require 'Time'
 
 class Gadget
   # attr_writer :password
-  attr_reader :production_number
+  attr_reader :production_number, :apps
   attr_accessor :username, :password
 
   def initialize(username, password)
@@ -11,11 +11,24 @@ class Gadget
     @password = password
     # @production_number = "#{('a'..'z').to_a.sample}-#{rand(1...1000)}"
     @production_number = generate_production_number
+    @apps = []
   end
 
+  # What is the benefit of instance methods over instance variables?
+
   def to_s
-    "Gadget #{@production_number} has the username #{@username}. It is made from
-    the #{self.class} class and it has the ID #{self.object_id}."
+    "Gadget #{production_number} has the username #{username}. It is made from
+    the #{self.class} class and it has the ID #{object_id}."
+    # "Gadget #{self.production_number} has the username #{self.username}. It is
+    # made from the #{self.class} class and it has the ID #{self.object_id}."
+    # "Gadget #{@production_number} has the username #{@username}. It is made from
+    # the #{self.class} class and it has the ID #{self.object_id}."
+  end
+
+  def reset(username, password)
+    self.username = username
+    self.password = password
+    self.apps = []
   end
 
   def password=(password)
@@ -23,6 +36,9 @@ class Gadget
   end
 
   private
+
+  attr_writer :apps
+
   def generate_production_number
     start_digits = rand(10_000..99_999)
     end_digits = rand(10_000..99_999)
