@@ -1,5 +1,6 @@
 # frozen_string_literal: false
 require 'Time'
+require_relative 'app_store'
 
 class Gadget
   # attr_writer :password
@@ -23,6 +24,17 @@ class Gadget
     # made from the #{self.class} class and it has the ID #{self.object_id}."
     # "Gadget #{@production_number} has the username #{@username}. It is made from
     # the #{self.class} class and it has the ID #{self.object_id}."
+  end
+
+
+  def install_app(name)
+    app = AppStore.find_app(name)
+    @apps << app unless @apps.include?(app)
+  end
+
+  def delete_app(name)
+    app = AppStore.find_app(name)
+    apps.delete(app) unless app.nil?
   end
 
   def reset(username, password)
@@ -65,3 +77,14 @@ phone.password=("123456978")
 p phone.password
 phone.password = "passsss123"
 p phone.password
+
+g = Gadget.new("boris", "passwods")
+g.install_app(:Chat)
+g.install_app(:Twitter)
+g.install_app(:Twitter)
+g.install_app(:vyinv)
+p g.apps
+
+g.delete_app(:Chat)
+g.delete_app(:News)
+p g.apps
