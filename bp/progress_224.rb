@@ -1,3 +1,4 @@
+# frozen_string_literal: false
 module Purchaseable
   def purchase(item)
     "#{item} has been purchased."
