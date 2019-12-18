@@ -17,7 +17,11 @@ puts boris.introduce
 
 class Manager < Employee
   def yell
-    'Who\'s the boss? I\'m the boss!'
+    'Who\'s the boss? I\'m the boss!'    
+  end
+
+  def introduce
+    "My name is #{name} and I'm a manager."
     
   end
 end
@@ -68,3 +72,7 @@ p dan.introduce
 p bob.yell
 p dan.clock_in('8.30')
 p dan.yell
+
+sally = Manager.new("Sally", 45)
+p sally.introduce
+p dan.introduce
