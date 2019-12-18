@@ -1,3 +1,4 @@
+# frozen_string_literal: false
 class Array
   def sum
     total = 0

@@ -1,4 +1,5 @@
-class Fixnum
+# frozen_literal_string: false
+class Fixnu
   def times
     i = 1
     until i > self
