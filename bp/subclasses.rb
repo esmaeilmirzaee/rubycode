@@ -28,3 +28,10 @@ dan = Worker.new("Daniel", 36)
 
 p bob.introduce
 p dan.introduce
+
+puts Manager < Employee
+puts Worker < Employee
+p Worker < Manager
+puts Worker < Manager
+puts Worker == Manager
+p Worker.ancestors
