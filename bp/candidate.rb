@@ -17,12 +17,15 @@ p senator.name
 class Candidate
   attr_reader :name, :age, :occupation, :hobby, :birthplace
 
-  def initialize(name, details)
+  def initialize(name, details = {})
+    defaults = {age: 35, occupation: "Candidate", hobby: "Running for office", birthplace: "USA"}
+    defaults.merge!(details)
+    
     @name = name
-    @age = details[:age]
-    @occupation = details[:occupation]
-    @hobby = details[:hobby]
-    @birthplace = details[:birthplace]
+    @age = defaults[:age]
+    @occupation = defaults[:occupation]
+    @hobby = defaults[:hobby]
+    @birthplace = defaults[:birthplace]
   end
 end
 
